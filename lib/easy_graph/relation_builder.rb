@@ -1,5 +1,5 @@
 module EasyGraph
-  class Relation
+  class RelationBuilder
     attr_accessor :model
 
     def initialize(model)
@@ -23,7 +23,7 @@ module EasyGraph
       when "ActiveRecord::Reflection::HasManyReflection" then :has_many
       when "ActiveRecord::Reflection::BelongsToReflection" then :belongs_to
       else
-        raise "Unknown Relation"
+        raise "Unknown RelationBuilder"
       end
     end
   end
