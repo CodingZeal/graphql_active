@@ -9,7 +9,7 @@ module EasyGraph
     def attributes
       names.zip(types).reduce({}) do |results, (name, type)|
         type = "ID" if name == :id
-        results[name] = type
+        results[name] = "!types.#{type}"
         results
       end
     end

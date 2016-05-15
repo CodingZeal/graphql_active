@@ -8,8 +8,8 @@ RSpec.describe EasyGraph::RelationBuilder do
     let(:model) { User }
     let(:expected_return) do
       {
-        posts: OpenStruct.new(type: :has_many, relation_class: "Post"),
-        comments: OpenStruct.new(type: :has_many, relation_class: "Comment")
+        posts: "-> { types[Type.build(Post)] }",
+        comments: "-> { types[Type.build(Comment)] }"
       }
     end
 
@@ -22,8 +22,8 @@ RSpec.describe EasyGraph::RelationBuilder do
     let(:model) { Comment }
     let(:expected_return) do
       {
-        post: OpenStruct.new(type: :belongs_to, relation_class: "Post"),
-        commenter: OpenStruct.new(type: :belongs_to, relation_class: "User")
+        post: "Type.build(Post)",
+        commenter: "Type.build(User)"
       }
     end
 

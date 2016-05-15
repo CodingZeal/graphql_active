@@ -8,10 +8,7 @@ module EasyGraph
 
     def relations
       model.reflections.reduce({}) do |relations, (_, relation)|
-        relations[relation.name] = OpenStruct.new(
-          type: association_type_for(relation),
-          relation_class: (relation.class_name || relation.name.singularize).capitalize
-        )
+        relations[relation.name] = association_type_for(relation)
         relations
       end
     end
@@ -19,9 +16,12 @@ module EasyGraph
     private
 
     def association_type_for(relation)
+      klass = (relation.class_name || relation.name.singularize).capitalize
       case relation.class.to_s
-      when "ActiveRecord::Reflection::HasManyReflection" then :has_many
-      when "ActiveRecord::Reflection::BelongsToReflection" then :belongs_to
+      when "ActiveRecord::Reflection::HasManyReflection"
+        "-> { types[Type.build(#{klass})] }"
+      when "ActiveRecord::Reflection::BelongsToReflection"
+        "Type.build(#{klass})"
       else
         raise "Unknown RelationBuilder"
       end
