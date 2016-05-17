@@ -1,3 +1,4 @@
+require "graphql"
 require "active_record"
 require "inflections"
 
