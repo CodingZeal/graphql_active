@@ -5,10 +5,10 @@ RSpec.describe EasyGraph::AttributeBuilder do
   let(:model) { User }
   let(:expected_return) do
     {
-      id: "ID",
-      first_name: "String",
-      last_name: "String",
-      age: "Int"
+      id: "!types.ID",
+      first_name: "!types.String",
+      last_name: "!types.String",
+      age: "!types.Int"
     }
   end
 
