@@ -9,20 +9,37 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Julian Rogmans"]
   spec.email         = ["rogmansj@gmail.com"]
 
-  spec.summary       = %q{Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
-  spec.homepage      = "https://github.com/julianrogmans/easy_graph/branches/yours"
-  spec.license       = "MIT"
+  spec.summary = %q(
+    Simple GraphQL interface for your ActiveRecord models
+  )
+  spec.description = %q(
+    Ever wanted to try out graphql querying without having to learn the deep
+    inner workings of the language itself. EasyGraph translates your models of
+    your choosing into fully working, sensible, ActiveRecord style endpoints
+    via a CRUD like interface to change things.
+
+    Ever wanted to give your existing API some graphql endpoints without having
+    to figure out all of the related objects you have to create to give your
+    model the data it needs. No problem, with fully customizable EasyGraph
+    objects it can be as simple as adding an calling `easy_graph` in your model
+    or as intricate as building advanced ActiveRecord -> GraphQL tranlation
+    queries with ease.
+  )
+  spec.homepage = "https://github.com/julianrogmans/easy_graph/branches/yours"
+  spec.license = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "https://github.com/julianrogmans/easy_graph/branches/yours"
+    spec.metadata['allowed_push_host'] =
+      "https://github.com/julianrogmans/easy_graph/branches/yours"
   else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
+    raise "RubyGems 2.0 or newer required to protect against public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
+  end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
@@ -36,4 +53,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "pry-byebug"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "database_cleaner"
 end

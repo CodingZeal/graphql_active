@@ -18,16 +18,11 @@ module EasyGraph
 
     def graphql_type(type)
       types = {
-        binary: "String",
-        boolean: "Boolean",
-        date: "String",
-        datetime: "String",
-        decimal: "Float",
-        float: "Float",
         integer: "Int",
-        string: "String",
-        text: "String",
-        time: "String"
+        boolean: "Boolean",
+        decimal: "Float", float: "Float",
+        binary: "String", date: "String", datetime: "String",
+        string: "String", text: "String", time: "String"
       }
       types[type]
     end
