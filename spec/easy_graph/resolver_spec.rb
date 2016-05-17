@@ -4,18 +4,20 @@ RSpec.describe EasyGraph::Resolver do
   let(:model) { User }
 
   let!(:users) do
-    model.create([
-      {
-        first_name: "Foo",
-        last_name: "Bar",
-        age: 20
-      },
-      {
-        first_name: "Fiz",
-        last_name: "Buz",
-        age: 55
-      }
-    ])
+    model.create(
+      [
+        {
+          first_name: "Foo",
+          last_name: "Bar",
+          age: 20
+        },
+        {
+          first_name: "Fiz",
+          last_name: "Buz",
+          age: 55
+        }
+      ]
+    )
   end
 
   it "returns single item if id given" do
