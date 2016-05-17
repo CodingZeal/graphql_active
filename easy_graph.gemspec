@@ -2,9 +2,6 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "easy_graph/version"
-require "active_record"
-require "inflections"
-
 
 Gem::Specification.new do |spec|
   spec.name          = "easy_graph"
