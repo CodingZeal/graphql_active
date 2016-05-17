@@ -8,3 +8,6 @@ dependencies:
 database:
   override:
     - echo "false"
+test:
+  post:
+    - bundle exec rubocop
