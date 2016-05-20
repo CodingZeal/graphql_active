@@ -7,8 +7,8 @@ RSpec.describe EasyGraph::AttributeBuilder do
     {
       id: "!types.ID",
       first_name: "!types.String",
-      last_name: "!types.String",
-      age: "!types.Int"
+      last_name: "types.String",
+      age: "types.Int"
     }
   end
 
