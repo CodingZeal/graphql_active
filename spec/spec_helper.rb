@@ -10,3 +10,7 @@ require "database_cleaner"
 require_relative "support/database_cleaner"
 require_rel "models"
 require_rel "factories"
+
+RSpec.configure do |config|
+  config.order = "random"
+end
