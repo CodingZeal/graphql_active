@@ -12,4 +12,10 @@ require "easy_graph/type"
 require "easy_graph/resolver"
 
 module EasyGraph
+  def self.easy_query(query, model = nil)
+    if model.nil? || !(model.ancestors.include? ActiveRecord::Base)
+      raise ArgumentError.new, "#{model} is not an ActiveRecord class"
+    end
+    Schema.build(model).execute("query { #{query} }")
+  end
 end
