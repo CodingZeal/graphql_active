@@ -18,4 +18,11 @@ module EasyGraph
     end
     Schema.build(model).execute("query { #{query} }")
   end
+
+  def self.easy_mutate(mutation, model = nil)
+    if model.nil? || !(model.ancestors.include? ActiveRecord::Base)
+      raise ArgumentError.new, "#{model} is not an ActiveRecord class"
+    end
+    Schema.build(model).execute("mutation { #{mutation} }")
+  end
 end

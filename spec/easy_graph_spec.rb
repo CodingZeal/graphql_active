@@ -107,4 +107,47 @@ describe EasyGraph do
       expect(described_class.easy_query(query, Post)).to eq result
     end
   end
+
+  context "creating a record" do
+    let(:mutation) do
+      'create_user(first_name: "TEST", age: 25) { first_name }'
+    end
+    let(:result) do
+      {
+        "data" => {
+          "create_user" => {
+            "first_name" => "TEST"
+          }
+        }
+      }
+    end
+
+    it "saves to the database and returns the expected data" do
+      expect(described_class.easy_mutate(mutation, User)).to eq result
+      expect(User.last.first_name).to eq "TEST"
+      expect(User.last.last_name).to be_nil
+    end
+  end
+
+  context "updating a record" do
+    let(:mutation) do
+      'update_user(id: 1, first_name: "TEST", age: 25) { first_name, age }'
+    end
+    let(:result) do
+      {
+        "data" => {
+          "update_user" => {
+            "first_name" => "TEST",
+            "age" => 25
+          }
+        }
+      }
+    end
+
+    it "saves to the database and returns the expected data" do
+      expect(described_class.easy_mutate(mutation, User)).to eq result
+      expect(User.first.first_name).to eq "TEST"
+      expect(User.first.age).to eq 25
+    end
+  end
 end
