@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class Query
     def self.build(model)
       instance_eval do

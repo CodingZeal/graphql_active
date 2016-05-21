@@ -1,9 +1,9 @@
 require "spec_helper"
 
-RSpec.describe EasyGraph::Schema do
+RSpec.describe GraphqlActive::Schema do
   let(:schema) { described_class.build(model, fake_query) }
   let(:model) { User }
-  let(:fake_query) { double "EasyGraph::Query" }
+  let(:fake_query) { double "GraphqlActive::Query" }
 
   it "builds and returns the Schema" do
     expect(schema).to be_an_instance_of(GraphQL::Schema)

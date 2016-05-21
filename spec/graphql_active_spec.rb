@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe EasyGraph do
+describe GraphqlActive do
 end

@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class Type
     def self.build(model)
       GraphQL::ObjectType.define do
@@ -16,11 +16,11 @@ module EasyGraph
     end
 
     def self.relations(model)
-      EasyGraph::RelationBuilder.new(model).relations
+      GraphqlActive::RelationBuilder.new(model).relations
     end
 
     def self.attributes(model)
-      EasyGraph::AttributeBuilder.new(model).attributes
+      GraphqlActive::AttributeBuilder.new(model).attributes
     end
   end
 end

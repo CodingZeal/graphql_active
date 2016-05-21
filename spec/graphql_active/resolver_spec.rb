@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe EasyGraph::Resolver do
+RSpec.describe GraphqlActive::Resolver do
   let(:model) { User }
 
   let!(:users) do

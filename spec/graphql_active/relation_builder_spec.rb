@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe EasyGraph::RelationBuilder do
+RSpec.describe GraphqlActive::RelationBuilder do
   let(:easy_graph_relation) { described_class.new(model) }
   let(:model) { Post }
 
