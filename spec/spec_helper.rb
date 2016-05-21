@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require "easy_graph"
+require "graphql_active"
 require "sqlite3"
 require "graphql"
 require "active_record"

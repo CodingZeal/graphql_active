@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class RelationBuilder
     attr_accessor :model
 

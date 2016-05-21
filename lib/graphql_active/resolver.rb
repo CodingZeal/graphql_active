@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class Resolver
     def self.resolve(model)
       lambda do |_object, arguments, _context|

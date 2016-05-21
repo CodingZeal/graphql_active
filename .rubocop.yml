@@ -25,7 +25,7 @@ Style/StringLiterals:
 # Cop supports --auto-correct.
 Style/UnneededPercentQ:
   Exclude:
-    - 'easy_graph.gemspec'
+    - 'graphql_active.gemspec'
 
 # Offense count: 3
 # Cop supports --auto-correct.

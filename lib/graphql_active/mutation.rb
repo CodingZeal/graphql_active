@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class Mutation
     def self.build(model) ## rubocop:disable MethodLength, AbcSize
       GraphQL::ObjectType.define do
