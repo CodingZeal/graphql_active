@@ -9,9 +9,9 @@ describe GraphqlActive do
     let(:non_active_record_class) { Struct.new(:first_name, :last_name) }
 
     it "raises an error if class passed is not ActiveRecord" do
-      expect{
+      expect do
         described_class.easy_query(nil, non_active_record_class)
-      }.to raise_error ArgumentError
+      end.to raise_error ArgumentError
     end
   end
 
