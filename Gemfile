@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in easy_graph.gemspec
+# Specify your gem's dependencies in graphql_active.gemspec
 gemspec

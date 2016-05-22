@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class Schema
     def self.build(model, query = Query, mutation = Mutation)
       GraphQL::Schema.new(

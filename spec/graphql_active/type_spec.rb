@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe EasyGraph::Type do
+RSpec.describe GraphqlActive::Type do
   let(:type) { described_class.build(User) }
 
   it "defines a name" do

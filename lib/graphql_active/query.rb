@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class Query
     def self.build(model) # rubocop:disable AbcSize, MethodLength
       GraphQL::ObjectType.define do

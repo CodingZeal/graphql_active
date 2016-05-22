@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe EasyGraph do
+describe GraphqlActive do
   before do
     FactoryGirl.create_list(:user, 2)
   end
 
   context ".easy_query" do
     let(:non_active_record_class) { Struct.new(:first_name, :last_name) }
-    
+
     it "raises an error if class passed is not ActiveRecord" do
       expect{
         described_class.easy_query(nil, non_active_record_class)

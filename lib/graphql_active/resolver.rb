@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class Resolver
     def self.all(model)
       -> (_, _, _) { model.all }

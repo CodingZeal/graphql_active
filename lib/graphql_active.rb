@@ -2,16 +2,16 @@ require "graphql"
 require "active_record"
 require "inflections"
 
-require "easy_graph/version"
-require "easy_graph/relation_builder"
-require "easy_graph/attribute_builder"
-require "easy_graph/schema"
-require "easy_graph/query"
-require "easy_graph/mutation"
-require "easy_graph/type"
-require "easy_graph/resolver"
+require "graphql_active/version"
+require "graphql_active/relation_builder"
+require "graphql_active/attribute_builder"
+require "graphql_active/schema"
+require "graphql_active/query"
+require "graphql_active/mutation"
+require "graphql_active/type"
+require "graphql_active/resolver"
 
-module EasyGraph
+module GraphqlActive
   def self.easy_query(query, model = nil)
     if model.nil? || !(model.ancestors.include? ActiveRecord::Base)
       raise ArgumentError.new, "#{model} is not an ActiveRecord class"

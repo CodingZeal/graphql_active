@@ -1,4 +1,4 @@
-module EasyGraph
+module GraphqlActive
   class AttributeBuilder
     attr_accessor :model
 

@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "easy_graph/version"
+require "graphql_active/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "easy_graph"
-  spec.version       = EasyGraph::VERSION
+  spec.name          = "graphql_active"
+  spec.version       = GraphqlActive::VERSION
   spec.authors       = ["Julian Rogmans"]
   spec.email         = ["rogmansj@gmail.com"]
 
@@ -14,25 +14,25 @@ Gem::Specification.new do |spec|
   )
   spec.description = %q(
     Ever wanted to try out graphql querying without having to learn the deep
-    inner workings of the language itself. EasyGraph translates your models of
+    inner workings of the language itself. GraphqlActive translates your models of
     your choosing into fully working, sensible, ActiveRecord style endpoints
     via a CRUD like interface to change things.
 
     Ever wanted to give your existing API some graphql endpoints without having
     to figure out all of the related objects you have to create to give your
-    model the data it needs. No problem, with fully customizable EasyGraph
-    objects it can be as simple as adding an calling `easy_graph` in your model
+    model the data it needs. No problem, with fully customizable GraphqlActive
+    objects it can be as simple as adding an calling `graphql_active` in your model
     or as intricate as building advanced ActiveRecord -> GraphQL tranlation
     queries with ease.
   )
-  spec.homepage = "https://github.com/julianrogmans/easy_graph/branches/yours"
+  spec.homepage = "https://github.com/julianrogmans/graphql_active/branches/yours"
   spec.license = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] =
-      "https://github.com/julianrogmans/easy_graph/branches/yours"
+      "https://github.com/julianrogmans/graphql_active/branches/yours"
   else
     raise "RubyGems 2.0 or newer required to protect against public gem pushes."
   end

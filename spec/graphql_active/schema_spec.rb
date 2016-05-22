@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe EasyGraph::Schema do
+RSpec.describe GraphqlActive::Schema do
   let(:schema) { described_class.build(model) }
   let(:model) { User }
 
