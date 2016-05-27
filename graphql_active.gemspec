@@ -44,16 +44,16 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "activerecord", "4.2.6"
-  spec.add_runtime_dependency "graphql"
-  spec.add_runtime_dependency "inflections"
-  spec.add_development_dependency "require_all"
-  spec.add_development_dependency "sqlite3"
+  spec.add_runtime_dependency "activerecord", "~> 4"
+  spec.add_runtime_dependency "activesupport", "~> 4"
+  spec.add_runtime_dependency "graphql", "~> 0"
+  spec.add_development_dependency "require_all", "~> 1.3"
+  spec.add_development_dependency "sqlite3", "~> 1.3"
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "factory_girl"
-  spec.add_development_dependency "pry-byebug"
-  spec.add_development_dependency "rubocop"
-  spec.add_development_dependency "database_cleaner"
+  spec.add_development_dependency "factory_girl", "~> 4"
+  spec.add_development_dependency "pry-byebug", "3.3"
+  spec.add_development_dependency "rubocop", "~> 0"
+  spec.add_development_dependency "database_cleaner", "~> 1.5"
 end

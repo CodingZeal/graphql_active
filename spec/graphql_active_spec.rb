@@ -19,11 +19,11 @@ describe GraphqlActive do
     let(:query) { 'user(id: 1) { first_name, last_name, age }' }
     let(:result) do
       {
-        "data" => {
-          "user" => {
-            "first_name" => "first_name_1",
-            "last_name" => "last_name_1",
-            "age" => 10
+        data: {
+          user: {
+            first_name: "first_name_1",
+            last_name: "last_name_1",
+            age: 10
           }
         }
       }
@@ -38,17 +38,17 @@ describe GraphqlActive do
     let(:query) { 'users() { first_name, last_name, age }' }
     let(:result) do
       {
-        "data" => {
-          "users" => [
+        data: {
+          users: [
             {
-              "first_name" => "first_name_1",
-              "last_name" => "last_name_1",
-              "age" => 10
+              first_name: "first_name_1",
+              last_name: "last_name_1",
+              age: 10
             },
             {
-              "first_name" => "first_name_2",
-              "last_name" => "last_name_2",
-              "age" => 10
+              first_name: "first_name_2",
+              last_name: "last_name_2",
+              age: 10
             }
           ]
         }
@@ -64,15 +64,15 @@ describe GraphqlActive do
     let(:query) { 'user(id: 1) { first_name, last_name, age, posts {title} }' }
     let(:result) do
       {
-        "data" => {
-          "user" => {
-            "first_name" => "first_name_1",
-            "last_name" => "last_name_1",
-            "age" => 10,
-            "posts" => [
-              { "title" => "Post title 1" },
-              { "title" => "Post title 2" },
-              { "title" => "Post title 3" }
+        data: {
+          user: {
+            first_name: "first_name_1",
+            last_name: "last_name_1",
+            age: 10,
+            posts: [
+              { title: "Post title 1" },
+              { title: "Post title 2" },
+              { title: "Post title 3" }
             ]
           }
         }
@@ -90,13 +90,13 @@ describe GraphqlActive do
     let(:query) { 'post(id: 1) { title, body, author { first_name, age } }' }
     let(:result) do
       {
-        "data" => {
-          "post" => {
-            "title" => "Post title 1",
-            "body" => "Post body 1",
-            "author" => {
-              "first_name" => post_author.first_name,
-              "age" => post_author.age
+        data: {
+          post: {
+            title: "Post title 1",
+            body: "Post body 1",
+            author: {
+              first_name: post_author.first_name,
+              age: post_author.age
             }
           }
         }
@@ -114,9 +114,9 @@ describe GraphqlActive do
     end
     let(:result) do
       {
-        "data" => {
-          "create_user" => {
-            "first_name" => "TEST"
+        data: {
+          create_user: {
+            first_name: "TEST"
           }
         }
       }
@@ -135,10 +135,10 @@ describe GraphqlActive do
     end
     let(:result) do
       {
-        "data" => {
-          "update_user" => {
-            "first_name" => "TEST",
-            "age" => 25
+        data: {
+          update_user: {
+            first_name: "TEST",
+            age: 25
           }
         }
       }

@@ -1,6 +1,6 @@
 require "graphql"
 require "active_record"
-require "inflections"
+require "active_support/core_ext"
 
 require "graphql_active/version"
 require "graphql_active/relation_builder"
@@ -16,13 +16,13 @@ module GraphqlActive
     if model.nil? || !(model.ancestors.include? ActiveRecord::Base)
       raise ArgumentError.new, "#{model} is not an ActiveRecord class"
     end
-    Schema.build(model).execute("query { #{query} }")
+    Schema.build(model).execute("query { #{query} }").deep_symbolize_keys
   end
 
   def self.easy_mutate(mutation, model = nil)
     if model.nil? || !(model.ancestors.include? ActiveRecord::Base)
       raise ArgumentError.new, "#{model} is not an ActiveRecord class"
     end
-    Schema.build(model).execute("mutation { #{mutation} }")
+    Schema.build(model).execute("mutation { #{mutation} }").deep_symbolize_keys
   end
 end
