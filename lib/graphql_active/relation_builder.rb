@@ -8,7 +8,6 @@ module GraphqlActive
 
     def relations
       model.reflections.reduce({}) do |relations, (_, relation)|
-        relation = relation.try(:delegate_reflection) || relation
         relations[relation.name] = association_type_for(relation)
         relations
       end
@@ -18,6 +17,7 @@ module GraphqlActive
 
     def association_type_for(relation)
       klass_name = (relation.class_name || relation.name.singularize).capitalize
+      relation = relation.try(:delegate_reflection) || relation
       case relation.class.to_s
       when "ActiveRecord::Reflection::HasManyReflection"
         "-> { types[Type.build(#{klass_name})] }"
