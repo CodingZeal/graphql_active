@@ -31,11 +31,9 @@ module GraphqlActive
       types = {
         integer: "Int",
         boolean: "Boolean",
-        decimal: "Float", float: "Float",
-        binary: "String", date: "String", datetime: "String",
-        string: "String", text: "String", time: "String"
+        decimal: "Float", float: "Float"
       }
-      types[field_type]
+      types[field_type] || "String"
     end
 
     def types
