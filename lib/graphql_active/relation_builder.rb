@@ -20,9 +20,9 @@ module GraphqlActive
       relation = relation.try(:delegate_reflection) || relation
       case relation.class.to_s
       when "ActiveRecord::Reflection::HasManyReflection"
-        "-> { types[Type.build(#{klass_name})] }"
+        "-> { types[Type.build(::#{klass_name})] }"
       when "ActiveRecord::Reflection::BelongsToReflection"
-        "Type.build(#{klass_name})"
+        "Type.build(::#{klass_name})"
       else
         raise "Unknown RelationBuilder"
       end

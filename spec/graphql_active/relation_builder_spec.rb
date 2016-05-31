@@ -8,8 +8,8 @@ RSpec.describe GraphqlActive::RelationBuilder do
     let(:model) { User }
     let(:expected_return) do
       {
-        posts: "-> { types[Type.build(Post)] }",
-        comments: "-> { types[Type.build(Comment)] }"
+        posts: "-> { types[Type.build(::Post)] }",
+        comments: "-> { types[Type.build(::Comment)] }"
       }
     end
 
@@ -22,8 +22,8 @@ RSpec.describe GraphqlActive::RelationBuilder do
     let(:model) { Comment }
     let(:expected_return) do
       {
-        post: "Type.build(Post)",
-        commenter: "Type.build(User)"
+        post: "Type.build(::Post)",
+        commenter: "Type.build(::User)"
       }
     end
 
